@@ -36,8 +36,8 @@ while($Result = mysqli_fetch_array($res))
 {
 ?>
   <tr>
-    <td><center><?php echo $Result['name'];?></center></td>
-    <td><center><?php echo $Result['comment'];?></center></td>
+    <td><center><?php echo $Result['Name'];?></center></td>
+    <td><center><?php echo $Result['Comment'];?></center></td>
     <td><center><a href="formindexdata.html"><input type="submit" value="Change" class="btn-default"></a>&nbsp;&nbsp;<a href="formdeletedata.html"><input type="submit" value="Delete"  class="btn-default"></a></center></td>
   </tr>
 <?php
