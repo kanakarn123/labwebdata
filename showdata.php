@@ -11,7 +11,7 @@
 <body>
 <?php
 $conn = mysqli_init();
-mysqli_real_connect($conn, 'labwebdataaa.mysql.database.azure.com', 'kanakarn@labwebdataaa', 'Jaoo01062544', 'itflab', 3306);
+mysqli_real_connect($conn, 'labwebdata.mysql.database.azure.com', 'kanakarn@labwebdata', 'Jaoo01062544', 'itflab', 3306);
 if (mysqli_connect_errno($conn))
 {
     die('Failed to connect to MySQL: '.mysqli_connect_error());
@@ -28,16 +28,20 @@ $res = mysqli_query($conn, 'SELECT * FROM guestbook');
       <tr class="active">
           <th width="250"> <div align="center">Name</div></th>
           <th width="600"> <div align="center">Answer </div></th>
+          <th width="250"> <div align="center">ccc </div></th>
           <th width="250"> <div align="center">Action </div></th>
+
       </tr>
     </thead>
 <?php
+$sum = 0;
 while($Result = mysqli_fetch_array($res))
 {
 ?>
   <tr>
-    <td><center><?php echo $Result['Name'];?></center></td>
-    <td><center><?php echo $Result['Comment'];?></center></td>
+    <td><center><?php echo $Result['name'];?></center></td>
+    <td><center><?php echo $Result['comment'];?></center></td>
+    <td><center><?php echo $sum+$Result['comment']+$Result['name'];?></center></td>
     <td><center><a href="formindexdata.html"><input type="submit" value="Change" class="btn-default"></a>&nbsp;&nbsp;<a href="formdeletedata.html"><input type="submit" value="Delete"  class="btn-default"></a></center></td>
   </tr>
 <?php
